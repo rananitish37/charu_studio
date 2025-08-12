@@ -186,7 +186,7 @@ body {
 }
 
 .hero-text-box {
-    background: rgba(20, 20, 20, 0.80);
+    background: rgba(20, 20, 20, 0.80); /* Default background with transparency */
     border-radius: 0;
     box-shadow: none;
     text-align: center;
@@ -196,8 +196,6 @@ body {
     padding: 3em 1.5em;
     box-sizing: border-box;
     margin: 0 auto;
-    left: 0;
-    transform: none;
 }
 
 .text-hero {
@@ -263,16 +261,26 @@ p {
         height: 420px;
     }
 
-    .hero-content,
-    .hero-text-box,
-    .text-hero {
+    .hero-content {
         padding: 2em 0.8em;
+    }
+
+    .hero-text-box {
+        background: transparent; /* FIX: Make the text box transparent on mobile */
+        padding: 0 1em; /* FIX: Adjust padding for better mobile fit */
+        width: 100%;
+        text-align: left;
     }
 
     .hero-buttons {
         gap: 0.9em;
         flex-direction: column;
         margin-top: 1.2em;
+        align-items: flex-start; /* FIX: Align buttons to the left on mobile */
+    }
+
+    h1, p {
+        text-align: left; /* FIX: Align text to the left on mobile */
     }
 }
 
@@ -672,11 +680,11 @@ h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
-    display: block;
 }
 
 .academy-overlay {
@@ -1427,7 +1435,7 @@ h3 {
 
 .bts-grid img:hover {
     transform: scale(1.04);
-    box-shadow: 0 18px 44px rgba(194, 145, 46, 0.25);
+    box-shadow: 18px 44px rgba(194, 145, 46, 0.25);
 }
 
 @media (max-width: 800px) {
