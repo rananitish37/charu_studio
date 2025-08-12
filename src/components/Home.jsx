@@ -5,6 +5,7 @@ import slider3 from "../images/slider3.jpeg";
 import slider4 from "../images/slider4.jpeg";
 import React, { useState, useEffect } from "react";
 
+
 export default function Home() {
   const heroImages = [
     require("../images/slider1.jpeg"),
@@ -12,7 +13,9 @@ export default function Home() {
     require("../images/slider3.jpeg"),
   ];
 
+
   const [currentIndex, setCurrentIndex] = useState(0);
+
 
   // Auto-slide every 5 seconds
   useEffect(() => {
@@ -24,7 +27,9 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+
   const [current, setCurrent] = useState(0);
+
 
     // Auto-slide every 6 seconds
     useEffect(() => {
@@ -33,6 +38,7 @@ export default function Home() {
         }, 6000);
         return () => clearInterval(interval);
     }, []);
+
 
     const goToPrev = () => setCurrent(current === 0 ? offerSlides.length - 1 : current - 1);
     const goToNext = () => setCurrent(current === offerSlides.length - 1 ? 0 : current + 1);
@@ -59,11 +65,14 @@ export default function Home() {
         }
     ];
 
+
   return (
     <div className="home">
 
+
         
         
+
 
       {/* Hero */}
       <section className="hero">
@@ -110,6 +119,7 @@ export default function Home() {
 </section>
 
 
+
       {/* About */}
       <section className="about">
         <div className="about-bg-container">
@@ -145,6 +155,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Services */}
       <section className="services">
@@ -194,6 +205,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Meet Charu */}
       <section className="meet-charu">
         <div className="meet-charu-row">
@@ -226,6 +238,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Testimonials */}
       <section className="academy">
@@ -291,6 +304,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Portfolio */}
       <section className="portfolio-preview">
         <h2>Our Work Portfolio: Artistry in Every Stroke</h2>
@@ -341,6 +355,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Products */}
       <section className="products">
         {/* Header at the top */}
@@ -372,6 +387,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Studio Experience */}
       <section className="studio-exp">
@@ -430,6 +446,7 @@ export default function Home() {
         </div>
       </section>
 
+
       <section className="behind-scenes">
         <h2>Behind the Scenes: The Artistry Unveiled</h2>
         <p className="behind-scenes-desc">
@@ -463,6 +480,7 @@ export default function Home() {
           />
         </div>
       </section>
+
 
       <section className="book-section">
         <h2>Book Your Experience or Enroll Today</h2>
@@ -499,6 +517,7 @@ export default function Home() {
           
         </div>
       </section>
+
 
       <section className="contact-connect">
         <div className="contact-grid">
