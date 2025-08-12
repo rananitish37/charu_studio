@@ -2,14 +2,14 @@
    Global Variables
    ========================= */
    :root {
-    --primary: #333333;       /* Charcoal Text for backgrounds on lighter sections */
-    --accent: #C2912E;        /* Signature Gold for headings & highlights */
-    --danger: #FF0000;        /* Red for alerts or call-outs */
-    --bg-light: #000000;      /* Base Black for main backgrounds */
-    --bg-cream: #1a1a1a;      /* A slightly lighter black for sections */
-    --bg-pink: #DADADA;       /* Elegant Grey for gradients */
-    --text-light: #FFFFFF;    /* Pure White for text on dark backgrounds */
-    --text-dark: #333333;     /* Charcoal Text for text on light backgrounds */
+    --primary: #333333;
+    --accent: #C2912E;
+    --danger: #FF0000;
+    --bg-light: #000000;
+    --bg-cream: #1a1a1a;
+    --bg-pink: #DADADA;
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
 }
 
 /* =========================
@@ -23,8 +23,8 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: var(--bg-light); /* Base Black for body background */
-    color: var(--text-light); /* Pure White for default text color */
+    background-color: var(--bg-light);
+    color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -36,7 +36,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--bg-light); /* Base Black for navbar background */
+    background-color: var(--bg-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,13 +47,13 @@ body {
 .navbar p {
     margin-top: 0;
     padding-left: 28%;
-    color: var(--bg-pink); /* Pure White */
+    color: var(--bg-pink);
 }
 
 .navbar .logo {
     font-family: 'Playfair Display', serif;
     font-size: 3.5em;
-    color: var(--accent); /* Signature Gold for logo */
+    color: var(--accent);
 }
 
 .navbar ul {
@@ -64,7 +64,7 @@ body {
 
 .navbar a {
     text-decoration: none;
-    color: var(--bg-pink); /* Pure White for nav links */
+    color: var(--bg-pink);
     font-weight: 500;
 }
 
@@ -113,7 +113,7 @@ body {
         top: 64px;
         left: 0;
         width: 100%;
-        background: var(--bg-light); /* Base Black for the dropdown menu */
+        background: var(--bg-light);
         z-index: 999;
         padding: 1em 0;
         border-top: 1px solid var(--accent);
@@ -186,7 +186,7 @@ body {
 }
 
 .hero-text-box {
-    background: rgba(20, 20, 20, 0.80); /* Default background with transparency */
+    background: rgba(20, 20, 20, 0.80);
     border-radius: 0;
     box-shadow: none;
     text-align: center;
@@ -209,14 +209,14 @@ h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.1em;
     margin-bottom: 0.6em;
-    color: var(--accent); /* Pure White */
+    color: var(--accent);
 }
 
 p {
     font-size: 1.3em;
     font-weight: 300;
     margin-bottom: 2em;
-    color: var(--bg-pink); /* Pure White */
+    color: var(--bg-pink);
 }
 
 .hero-buttons {
@@ -237,8 +237,8 @@ p {
 }
 
 .btn-primary {
-    background-color: var(--accent); /* Signature Gold */
-    color: var(--bg-light); /* Base Black */
+    background-color: var(--accent);
+    color: var(--bg-light);
 }
 
 .btn-primary:hover {
@@ -258,29 +258,37 @@ p {
 
 @media (max-width: 900px) {
     .hero {
-        height: 420px;
+        height: auto;
+        min-height: 420px;
+        padding-bottom: 2rem;
     }
 
     .hero-content {
-        padding: 2em 0.8em;
+        justify-content: flex-end;
+        padding: 0;
+        min-height: 420px;
     }
 
     .hero-text-box {
-        background: transparent; /* FIX: Make the text box transparent on mobile */
-        padding: 0 1em; /* FIX: Adjust padding for better mobile fit */
+        background: transparent;
+        padding: 0 1em;
         width: 100%;
         text-align: left;
     }
-
+    
     .hero-buttons {
         gap: 0.9em;
         flex-direction: column;
         margin-top: 1.2em;
-        align-items: flex-start; /* FIX: Align buttons to the left on mobile */
+        align-items: flex-start;
+    }
+
+    .btn-primary, .btn-secondary {
+        display: block; 
     }
 
     h1, p {
-        text-align: left; /* FIX: Align text to the left on mobile */
+        text-align: left;
     }
 }
 
@@ -316,8 +324,8 @@ p {
    ========================= */
 section {
     padding: 4em 2em;
-    background-color: var(--bg-light); /* Base Black */
-    color: var(--text-light); /* Pure White */
+    background-color: var(--bg-light);
+    color: var(--text-light);
     width: 100%;
 }
 
@@ -572,7 +580,7 @@ h3 {
 
 /*meet charu*/
 .meet-charu {
-    background: var(--bg-light); /* Base Black */
+    background: var(--bg-light);
     padding: 4em 2em;
     width: 100%;
 }
@@ -701,9 +709,9 @@ h3 {
     position: relative;
     z-index: 2;
     text-align: center;
-    color: var(--accent);
     font-size: 2.3em;
     margin-bottom: 2.2em;
+    color: var(--accent);
 }
 
 .academy-card-grid {
@@ -767,8 +775,8 @@ h3 {
 
 /* Testimonials */
 .testimonials {
-    background-color: var(--bg-cream); /* Darker gray */
-    color: var(--text-light); /* Pure White */
+    background-color: var(--bg-cream);
+    color: var(--text-light);
 }
 
 .testimonial-grid {
@@ -778,7 +786,7 @@ h3 {
 }
 
 .testimonial-grid p {
-    background: var(--bg-light); /* Base Black */
+    background: var(--bg-light);
     padding: 1em;
     border-radius: 10px;
     color: var(--text-light);
@@ -788,7 +796,7 @@ h3 {
 /* Portfolio Images */
 .portfolio-preview {
     position: relative;
-    background: var(--bg-cream); /* Darker gray */
+    background: var(--bg-cream);
     color: var(--text-light);
     padding: 4em 2em;
     overflow: hidden;
@@ -830,7 +838,7 @@ h3 {
 }
 
 .portfolio-card {
-    background: var(--bg-light); /* Base Black */
+    background: var(--bg-light);
     border-radius: 20px;
     padding: 0;
     overflow: hidden;
@@ -881,7 +889,7 @@ h3 {
 
 /*product*/
 .products {
-    background: var(--bg-cream); /* Darker gray */
+    background: var(--bg-cream);
     color: var(--text-light);
     padding: 4em 2em;
     width: 100%;
@@ -917,7 +925,7 @@ h3 {
 
 /* Card Base */
 .products-card {
-    background: var(--bg-light); /* Base Black */
+    background: var(--bg-light);
     border-radius: 24px;
     box-shadow: 0 10px 44px rgba(0, 0, 0, 0.18);
     border: 2px solid var(--accent);
@@ -1083,7 +1091,6 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    min-width: 340px;
     max-width: 520px;
     padding: 0 0 0 2em;
 }
@@ -1161,8 +1168,6 @@ h3 {
     margin: 0 auto;
 }
 
-
-
 .bts-grid img {
     width: 100%;
     height: 230px;
@@ -1216,9 +1221,6 @@ h3 {
 }
 
 .offers-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1264,23 +1266,22 @@ h3 {
     align-items: center;
     margin-top: 180px;
     border-radius: 18px;
-    padding-bottom: -10px;
     padding: 2em 0;
     box-sizing: border-box;
 }
 
 .offers-slider-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transform: translateY(-50%);
-    pointer-events: none;
-    z-index: 20;
-    padding: 0 12px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+  z-index: 20;
+  padding: 0 12px;
+  pointer-events: auto; /* Corrected: This line was missing on mobile */
 }
 
 .offers-nav {
@@ -1325,17 +1326,69 @@ h3 {
     max-width: 700px;
 }
 
-@media (max-width: 700px) {
-    .offers-bg-image-container,
+@media (min-width: 701px) {
+    .offers-header-overlay, .offers-slider-content, .offers-slider-controls {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+    
+    .offers-slider-full {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .offers-bg-image-container {
+        height: 400px;
+        position: relative;
+    }
+    
+    .offers-bg-image {
+        position: absolute;
+    }
+    
     .offers-slider-content {
+        padding: 2em;
+    }
+    
+    .offers-slider-controls {
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .offers-slider-full {
         height: auto;
-        margin-top: 80px;
-        padding: 1em 0.5em;
+        min-height: 400px;
+    }
+    
+    .offers-bg-image-container {
+      height: 400px;
     }
 
     .offers-header-overlay {
         padding: 1.2em 0 1.2em 0;
         font-size: 1.22em;
+    }
+    
+    .offers-slider-content {
+      top: 250px;
+      margin-top: 0;
+      padding: 2em 1em;
+      width: 100%;
+    }
+    
+    .offers-slider-controls {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
     }
 }
 
@@ -1421,8 +1474,6 @@ h3 {
     margin: 0 auto;
 }
 
-
-
 .bts-grid img {
     width: 100%;
     height: 230px;
@@ -1435,7 +1486,7 @@ h3 {
 
 .bts-grid img:hover {
     transform: scale(1.04);
-    box-shadow: 18px 44px rgba(194, 145, 46, 0.25);
+    box-shadow: 0 18px 44px rgba(194, 145, 46, 0.25);
 }
 
 @media (max-width: 800px) {
@@ -1455,146 +1506,5 @@ h3 {
         left: 0;
         transform: none;
         text-align: center;
-    }
-}
-
-/*offers*/
-.offers-slider-full {
-    position: relative;
-    width: 100%;
-    min-height: 520px;
-    overflow: hidden;
-    background: var(--bg-light);
-    color: var(--text-light);
-}
-
-.offers-bg-image-container {
-    position: relative;
-    width: 100%;
-    height: 520px;
-    overflow: hidden;
-}
-
-.offers-bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    z-index: 0;
-}
-
-.offers-bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.offers-header-overlay {
-    position: absolute;
-    top: 38px;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-    text-align: center;
-    padding: 2em 0 1.3em 0;
-}
-
-.offers-desc {
-    color: var(--text-light);
-    font-size: 1.18em;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.22);
-}
-
-.offers-slider-content {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    color: var(--text-light);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 180px;
-    border-radius: 18px;
-    padding-bottom: -10px;
-    padding: 2em 0;
-    box-sizing: border-box;
-}
-
-.offers-slider-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transform: translateY(-50%);
-    pointer-events: none;
-    z-index: 20;
-    padding: 0 12px;
-}
-
-.offers-nav {
-    background: transparent !important;
-    border: none;
-    color: var(--accent);
-    font-size: 2em;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    margin: 0;
-    opacity: 0.82;
-    pointer-events: auto;
-    transition: background-color 0.15s, color 0.15s, opacity 0.2s;
-    box-shadow: none;
-}
-
-.offers-nav:hover {
-    opacity: 1;
-    background: rgba(194, 145, 46, 0.18);
-    color: var(--bg-light);
-}
-
-.offers-indicator {
-    color: var(--accent);
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.offers-slider-content h3 {
-    color: var(--accent);
-    font-size: 1.3em;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 0.5em;
-}
-
-.offers-slider-content p {
-    color: var(--text-light);
-    font-size: 1.07em;
-    margin-bottom: 0.3em;
-    max-width: 700px;
-}
-
-@media (max-width: 700px) {
-    .offers-bg-image-container,
-    .offers-slider-content {
-        height: auto;
-        margin-top: 80px;
-        padding: 1em 0.5em;
-    }
-
-    .offers-header-overlay {
-        padding: 1.2em 0 1.2em 0;
-        font-size: 1.22em;
     }
 }
