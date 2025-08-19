@@ -1,124 +1,125 @@
-import heroImage from "../images/sec1.png";
-import slider1 from "../images/slider1.jpeg";
-import slider2 from "../images/slider2.jpeg";
-import slider3 from "../images/slider3.jpeg";
-import slider4 from "../images/slider4.jpeg";
 import React, { useState, useEffect } from "react";
 
-
 export default function Home() {
-  const heroImages = [
-    require("../images/slider1.jpeg"),
-    require("../images/slider2.jpeg"),
-    require("../images/slider3.jpeg"),
-  ];
-
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-
-  // Auto-slide every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === heroImages.length - 1 ? 0 : prev + 1
-      );
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
+  
 
   const [current, setCurrent] = useState(0);
 
+  // Auto-slide every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === offerSlides.length - 1 ? 0 : prev + 1));
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
-    // Auto-slide every 6 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-        setCurrent(prev => (prev === offerSlides.length - 1 ? 0 : prev + 1));
-        }, 6000);
-        return () => clearInterval(interval);
-    }, []);
-
-
-    const goToPrev = () => setCurrent(current === 0 ? offerSlides.length - 1 : current - 1);
-    const goToNext = () => setCurrent(current === offerSlides.length - 1 ? 0 : current + 1);
-    const offerSlides = [
-        {
-            image: require('../images/offer1.jpeg'), // Bridal Glow Package
-            title: 'Bridal Glow Package',
-            description: 'Save 20% on bridal makeup for your special day. Limited offer!'
-        },
-        {
-            image: require('../images/offer2.jpeg'), // Academy Early Bird
-            title: 'Academy Early Bird Special',
-            description: 'First 10 students get 15% off advanced courses. Transform your passion!'
-        },
-        {
-            image: require('../images/offer3.jpeg'), // First-Time Client
-            title: 'First-Time Client Welcome',
-            description: 'Enjoy 25% off your first makeup service. Discover unparalleled beauty.'
-        },
-        {
-            image: require('../images/offer4.jpeg'), // Group Glamour
-            title: 'Group Glamour Offer',
-            description: 'Book 3+ makeup appointments and each person gets 10% off. Ideal for events!'
-        }
-    ];
-
+  const goToPrev = () =>
+    setCurrent(current === 0 ? offerSlides.length - 1 : current - 1);
+  const goToNext = () =>
+    setCurrent(current === offerSlides.length - 1 ? 0 : current + 1);
+  const offerSlides = [
+    {
+      image: require("../images/offer1.jpeg"), // Bridal Glow Package
+      title: "Bridal Glow Package",
+      description:
+        "Save 20% on bridal makeup for your special day. Limited offer!",
+    },
+    {
+      image: require("../images/offer2.jpeg"), // Academy Early Bird
+      title: "Academy Early Bird Special",
+      description:
+        "First 10 students get 15% off advanced courses. Transform your passion!",
+    },
+    {
+      image: require("../images/offer3.jpeg"), // First-Time Client
+      title: "First-Time Client Welcome",
+      description:
+        "Enjoy 25% off your first makeup service. Discover unparalleled beauty.",
+    },
+    {
+      image: require("../images/offer4.jpeg"), // Group Glamour
+      title: "Group Glamour Offer",
+      description:
+        "Book 3+ makeup appointments and each person gets 10% off. Ideal for events!",
+    },
+  ];
 
   return (
     <div className="home">
-
-
-        
-        
-
-
       {/* Hero */}
       <section className="hero">
-        <div className="hero-bg-container">
-          <img
-            className="hero-bg"
-            src={heroImages[currentIndex]}
-            alt="Makeup studio background"
-          />
-          <div className="hero-overlay"></div>
-        </div>
-        <div className="hero-content">
-          <div className="text-hero hero-text-box">
-            <h1>The Premier Luxury Makeup Studio &amp; Academy</h1>
-            <p>Experience the pinnacle of makeup excellence in India.</p>
-            <div className="hero-buttons">
-              <button className="btn-primary">Book an Appointment</button>
-              <button className="btn-secondary">Explore Academy</button>
-            </div>
-          </div>
-        </div>
-      </section>
-{/* offers */}
-<section className="offers-slider-full">
-  <div className="offers-bg-image-container">
-    <img className="offers-bg-image" src={offerSlides[current].image} alt={offerSlides[current].title} />
-    <div className="offers-bg-overlay"></div>
-    <div className="offers-header-overlay">
-      <h2>Exclusive Offers & Promotions</h2>
-      <p className="offers-desc">
-        Indulge in luxury beauty and elevate your skills with our special limited-time offers.
-      </p>
-    </div>
-    <div className="offers-slider-content">
-      <div className="offers-slider-controls">
-        <button className="offers-nav" onClick={goToPrev} aria-label="Previous Offer">&#9664;</button>
-        <span className="offers-indicator">{current + 1} / {offerSlides.length}</span>
-        <button className="offers-nav" onClick={goToNext} aria-label="Next Offer">&#9654;</button>
+  <div className="hero-bg-container">
+    <video
+      className="hero-bg"
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      //poster={require("../images/video-poster.jpeg")}  // Optional poster image
+      src={require("../videos/hero-video.MP4")}         // Your 9:16 video file
+      type="video/mp4"
+    >
+      Your browser does not support the video tag.
+    </video>
+    <div className="hero-overlay"></div>
+  </div>
+  <div className="hero-content">
+    <div className="text-hero hero-text-box">
+      <h1>The Premier Luxury Makeup Studio &amp; Academy</h1>
+      <p>Experience the pinnacle of makeup excellence in India.</p>
+      <div className="hero-buttons">
+        <button className="btn-primary">Book an Appointment</button>
+        <button className="btn-secondary">Explore Academy</button>
       </div>
-      <h3>{offerSlides[current].title}</h3>
-      <p>{offerSlides[current].description}</p>
     </div>
   </div>
 </section>
 
-
+      {/* offers */}
+      <section className="offers-slider-full">
+        <div className="offers-bg-image-container">
+          <img
+            className="offers-bg-image"
+            src={offerSlides[current].image}
+            alt={offerSlides[current].title}
+          />
+          <div className="offers-bg-overlay"></div>
+          <div className="offers-header-overlay">
+            <h2>Exclusive Offers & Promotions</h2>
+            <p className="offers-desc">
+              Indulge in luxury beauty and elevate your skills with our special
+              limited-time offers.
+            </p>
+          </div>
+          <div className="offers-slider-content">
+            <div className="offers-slider-controls">
+              <button
+                className="offers-nav"
+                onClick={goToPrev}
+                aria-label="Previous Offer"
+              >
+                &#9664;
+              </button>
+              <span className="offers-indicator">
+                {current + 1} / {offerSlides.length}
+              </span>
+              <button
+                className="offers-nav"
+                onClick={goToNext}
+                aria-label="Next Offer"
+              >
+                &#9654;
+              </button>
+            </div>
+            <h3>{offerSlides[current].title}</h3>
+            <p>{offerSlides[current].description}</p>
+          </div>
+        </div>
+      </section>
 
       {/* About */}
       <section className="about">
@@ -155,7 +156,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* Services */}
       <section className="services">
@@ -205,7 +205,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Meet Charu */}
       <section className="meet-charu">
         <div className="meet-charu-row">
@@ -238,7 +237,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* Testimonials */}
       <section className="academy">
@@ -304,7 +302,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Portfolio */}
       <section className="portfolio-preview">
         <h2>Our Work Portfolio: Artistry in Every Stroke</h2>
@@ -355,7 +352,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Products */}
       <section className="products">
         {/* Header at the top */}
@@ -387,7 +383,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* Studio Experience */}
       <section className="studio-exp">
@@ -446,7 +441,6 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="behind-scenes">
         <h2>Behind the Scenes: The Artistry Unveiled</h2>
         <p className="behind-scenes-desc">
@@ -481,7 +475,6 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="book-section">
         <h2>Book Your Experience or Enroll Today</h2>
         <div className="book-card-row">
@@ -501,25 +494,39 @@ export default function Home() {
             <button className="btn-primary">Explore Courses</button>
           </div>
           <div className="card">
-            <h3>Other Services</h3>
-            <p>
-              We also provide other service like..
-            </p>
-            <button className="btn-primary">Others</button>
-          </div>
-          <div className="card">
             <h3>Contact Us</h3>
             <p>Luxury Studio Complex, 7/42 Patel Nagar, New Delhi, India</p>
             <p>+91 98765 43210</p>
             <p>info@charugumber.com</p>
             <button className="btn-secondary">Get Directions</button>
           </div>
-          
         </div>
       </section>
-
+      <section className="legacy-section">
+  <div className="legacy-image-container">
+    <img
+      className="legacy-image"
+      src={require("../images/legecy-image.jpeg")}
+      alt="Legacy Image"
+    />
+    <div className="legacy-lowerhalf-overlay">
+      <div className="legacy-text-inner">
+        <h2>Join The Legacy of Beauty &amp; Excellence</h2>
+        <p>
+          Become part of a community that celebrates artistry, confidence, and transformation. At Charu Gumber Studio &amp; Academy, we're not just creating looks—we're crafting experiences and careers.
+        </p>
+        <div className="legacy-cta">
+          Your dream look and career start here - where passion meets perfection.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="contact-connect">
+        <h2 className="contact-heading">
+          Connect with Charu Gumber Make Up Studio
+        </h2>
         <div className="contact-grid">
           {/* Reach Out */}
           <div className="contact-block">
@@ -576,9 +583,6 @@ export default function Home() {
             <button className="btn-instagram">Instagram</button>
           </div>
         </div>
-        {/* <footer className="footer-bar">
-                      <p>© 2024 Charu Gumber Studio & Academy. All rights reserved.</p>
-                    </footer> */}
       </section>
     </div>
   );

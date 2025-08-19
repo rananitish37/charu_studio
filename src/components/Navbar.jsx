@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div>
         <div className="logo">Charu Gumber</div>
-        <p className="txt">Makeup Studio</p>
+        <p className="txt">Makeup studio & Academy</p>
       </div>
 
       <button className="menu-toggle" onClick={toggleMenu} aria-label="Open Menu">
