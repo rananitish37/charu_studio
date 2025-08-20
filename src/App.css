@@ -20,7 +20,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Lato", sans-serif;
   background-color: var(--bg-light);
@@ -42,6 +44,8 @@ body {
   align-items: center;
   padding: 1em 2em;
   padding-left: 9%;
+  margin-bottom: 0;
+  padding-bottom: 2.5rem;
 }
 
 .navbar p {
@@ -133,24 +137,36 @@ body {
 /* =========================
    Hero Section
    ========================= */
+   .hero {
+    margin-top: -[navbar height];
+  }
+  .hero,
+.home > section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+  
    .hero-bg-container {
     position: relative;
-    width: 100vw;
+    width: 100vw;      /* full viewport width */
     height: 90vh;
     overflow: hidden;
     background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;  
   }
   
   .hero-bg {
-    width: auto;
-    height: 100%;
-    max-width: 110vw;
-    object-fit: contain;
-    filter: brightness(0.92); /* subtle darken for text contrast */
-    opacity: 0.95;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* cover entire container, cropping if needed */
+  transform: translate(-50%, -50%);
+  filter: brightness(0.92);
+  opacity: 0.95;
+  z-index: 0;
   }
   
   
@@ -1207,54 +1223,74 @@ h3 {
 /*offers*/
 .offers-slider-full {
   position: relative;
-  width: 100%;
-  min-height: 520px;
+  width: 100vw;             /* Full viewport width */
+  height: 90vh;             /* Match hero section height */
   overflow: hidden;
   background: var(--bg-light);
   color: var(--text-light);
+  display: block;           /* Align with hero section */
+  margin: 0;                /* Remove any default margins */
+  padding: 0;
 }
 
 .offers-bg-image-container {
   position: relative;
-  width: 100%;
-  height: 520px;
+  width: 100vw;             /* Full viewport width */
+  height: 90vh;             /* Match height */
   overflow: hidden;
 }
 
 .offers-bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 90vh;
+  object-fit: cover;        /* Cover entire container */
+  object-position: center;
+  transform: translate(-50%, -50%);
   z-index: 0;
 }
 
-.offers-bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
+.offers-bg-image-container {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
 }
 
 .offers-header-overlay {
-  position: absolute;
-  top: 38px;
-  left: 0;
+  position: absolute !important;
+  top: auto !important;
+  left: 50% !important;
+  transform: translateX(-90%) !important;
   width: 100%;
-  z-index: 2;
+  max-width: 1200px;
+  padding: 0 !important;
+  margin: 0 !important;
   text-align: center;
-  padding: 2em 0 1.3em 0;
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 }
 
-.offers-desc {
-  color: var(--text-light);
+
+
+.offers-header-overlay h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3em;
+  margin: 0;
+  color: var(--accent);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.offers-header-overlay p {
   font-size: 1.18em;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.22);
+  margin: 0;
+  color: var(--text-light);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 .offers-slider-content {
@@ -1265,7 +1301,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 180px;
+  margin: 0;                   /* Removed extra margin */
   border-radius: 18px;
   padding: 2em 0;
   box-sizing: border-box;
@@ -1282,7 +1318,7 @@ h3 {
   transform: translateY(-50%);
   z-index: 20;
   padding: 0 12px;
-  pointer-events: auto; /* Corrected: This line was missing on mobile */
+  pointer-events: auto;
 }
 
 .offers-nav {
@@ -1348,7 +1384,7 @@ h3 {
   }
 
   .offers-bg-image-container {
-    height: 400px;
+    height: 90vh;            /* Consistent with full section */
     position: relative;
   }
 
@@ -1368,11 +1404,11 @@ h3 {
 @media (max-width: 700px) {
   .offers-slider-full {
     height: auto;
-    min-height: 400px;
+    min-height: 90vh;
   }
 
   .offers-bg-image-container {
-    height: 400px;
+    height: 90vh;
   }
 
   .offers-header-overlay {
@@ -1394,6 +1430,7 @@ h3 {
     width: 100%;
   }
 }
+
 
 /* =========================
      Book
@@ -1702,6 +1739,13 @@ h3 {
   padding: 0.8em 2em;
   font-size: 1em;
   cursor: pointer;
+}
+.btn-instagram a{
+  color: #111;
+  text-decoration: none;
+}
+.contact-btn{
+  display: flex;
 }
 
 @media (max-width: 900px) {

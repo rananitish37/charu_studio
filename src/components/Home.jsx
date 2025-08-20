@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
+  const heroImages = [
+    require("../images/slider1.jpeg"),
+    require("../images/slider2.jpeg"),
+    require("../images/slider3.jpeg"),
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === heroImages.length - 1 ? 0 : prev + 1
+      );
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const [current, setCurrent] = useState(0);
 
@@ -22,10 +35,7 @@ export default function Home() {
     setCurrent(current === offerSlides.length - 1 ? 0 : current + 1);
   const offerSlides = [
     {
-      image: require("../images/offer1.jpeg"), // Bridal Glow Package
-      title: "Bridal Glow Package",
-      description:
-        "Save 20% on bridal makeup for your special day. Limited offer!",
+      image: require("../images/offer1.jpeg"),
     },
     {
       image: require("../images/offer2.jpeg"), // Academy Early Bird
@@ -50,37 +60,30 @@ export default function Home() {
   return (
     <div className="home">
       {/* Hero */}
-      <section className="hero">
-  <div className="hero-bg-container">
-    <video
-      className="hero-bg"
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="auto"
-      //poster={require("../images/video-poster.jpeg")}  // Optional poster image
-      src={require("../videos/hero-video.MP4")}         // Your 9:16 video file
-      type="video/mp4"
-    >
-      Your browser does not support the video tag.
-    </video>
-    <div className="hero-overlay"></div>
-  </div>
-  <div className="hero-content">
-    <div className="text-hero hero-text-box">
-      <h1>The Premier Luxury Makeup Studio &amp; Academy</h1>
-      <p>Experience the pinnacle of makeup excellence in India.</p>
-      <div className="hero-buttons">
-        <button className="btn-primary">Book an Appointment</button>
-        <button className="btn-secondary">Explore Academy</button>
-      </div>
-    </div>
-  </div>
-</section>
+      <section id="home" className="hero">
+        <div className="hero-bg-container">
+          <img
+            className="hero-bg"
+            src={heroImages[currentIndex]}
+            alt="Makeup studio background"
+          />
+          <div className="hero-overlay"></div>
+        </div>
+
+        <div className="hero-content">
+          <div className="text-hero hero-text-box">
+            <h1>The Premier Luxury Makeup Studio &amp; Academy</h1>
+            <p>Experience the pinnacle of makeup excellence in India.</p>
+            <div className="hero-buttons">
+              <button className="btn-primary">Book an Appointment</button>
+              <button className="btn-secondary">Explore Academy</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* offers */}
-      <section className="offers-slider-full">
+      <section id="offers" className="offers-slider-full">
         <div className="offers-bg-image-container">
           <img
             className="offers-bg-image"
@@ -104,9 +107,6 @@ export default function Home() {
               >
                 &#9664;
               </button>
-              <span className="offers-indicator">
-                {current + 1} / {offerSlides.length}
-              </span>
               <button
                 className="offers-nav"
                 onClick={goToNext}
@@ -115,14 +115,12 @@ export default function Home() {
                 &#9654;
               </button>
             </div>
-            <h3>{offerSlides[current].title}</h3>
-            <p>{offerSlides[current].description}</p>
           </div>
         </div>
       </section>
 
       {/* About */}
-      <section className="about">
+      <section id="about" className="about">
         <div className="about-bg-container">
           {/* Add your background image here. Use a local image or external URL */}
           <img
@@ -158,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="services">
+      <section id="services" className="services">
         <div className="services-bg-container">
           {/* Optionally add a full background image for the section */}
           <img
@@ -206,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Meet Charu */}
-      <section className="meet-charu">
+      <section id="meet-charu" className="meet-charu">
         <div className="meet-charu-row">
           {/* Left: Image Panel */}
           <div className="meet-charu-image">
@@ -239,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="academy">
+      <section id="academy" className="academy">
         <div className="academy-bg-container">
           {/* Main background image */}
           <img
@@ -303,7 +301,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio */}
-      <section className="portfolio-preview">
+      <section id="portfolio" className="portfolio-preview">
         <h2>Our Work Portfolio: Artistry in Every Stroke</h2>
         <p className="portfolio-desc">
           Explore a curated selection of our most exquisite makeup
@@ -353,7 +351,7 @@ export default function Home() {
       </section>
 
       {/* Products */}
-      <section className="products">
+      <section id="products" className="products">
         {/* Header at the top */}
         <h2>Our Premium Product Philosophy</h2>
         {/* Row of two cards: left is image, right is text */}
@@ -385,7 +383,7 @@ export default function Home() {
       </section>
 
       {/* Studio Experience */}
-      <section className="studio-exp">
+      <section id="studio-exp" className="studio-exp">
         <div className="studio-exp-container">
           {/* Left: Text/Features Side */}
           <div className="studio-exp-content">
@@ -441,7 +439,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="behind-scenes">
+      <section id="behind-scenes" className="behind-scenes">
         <h2>Behind the Scenes: The Artistry Unveiled</h2>
         <p className="behind-scenes-desc">
           Witness the dedication and passion that goes into every
@@ -475,7 +473,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="book-section">
+      <section id="book" className="book-section">
         <h2>Book Your Experience or Enroll Today</h2>
         <div className="book-card-row">
           <div className="card">
@@ -502,28 +500,31 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="legacy-section">
-  <div className="legacy-image-container">
-    <img
-      className="legacy-image"
-      src={require("../images/legecy-image.jpeg")}
-      alt="Legacy Image"
-    />
-    <div className="legacy-lowerhalf-overlay">
-      <div className="legacy-text-inner">
-        <h2>Join The Legacy of Beauty &amp; Excellence</h2>
-        <p>
-          Become part of a community that celebrates artistry, confidence, and transformation. At Charu Gumber Studio &amp; Academy, we're not just creating looks—we're crafting experiences and careers.
-        </p>
-        <div className="legacy-cta">
-          Your dream look and career start here - where passion meets perfection.
+      <section id="legacy" className="legacy-section">
+        <div className="legacy-image-container">
+          <img
+            className="legacy-image"
+            src={require("../images/legecy-image.jpeg")}
+            alt="Legacy Image"
+          />
+          <div className="legacy-lowerhalf-overlay">
+            <div className="legacy-text-inner">
+              <h2>Join The Legacy of Beauty &amp; Excellence</h2>
+              <p>
+                Become part of a community that celebrates artistry, confidence,
+                and transformation. At Charu Gumber Studio &amp; Academy, we're
+                not just creating looks—we're crafting experiences and careers.
+              </p>
+              <div className="legacy-cta">
+                Your dream look and career start here - where passion meets
+                perfection.
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-      <section className="contact-connect">
+      <section id="contact" className="contact-connect">
         <h2 className="contact-heading">
           Connect with Charu Gumber Make Up Studio
         </h2>
@@ -580,10 +581,31 @@ export default function Home() {
               Stay updated with our latest looks, courses, and behind-the-scenes
               content. Join our vibrant community!
             </p>
-            <button className="btn-instagram">Instagram</button>
+            <div className="contact-btn">
+              <button className="btn-instagram">
+                <a
+                  href="https://www.instagram.com/charugumbermakeupartist/?igsh=MTgzZjdkZ2NxcDZxYw%3D%3D#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </button>
+              <button className="btn-instagram">
+                <a
+                  href="https://share.google/GD2g0ltYs1OBZ42Il"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google 
+                </a>
+              </button>
+            </div>
           </div>
         </div>
       </section>
     </div>
   );
 }
+
+// https://share.google/YNqrTquglgpDYVnuE
