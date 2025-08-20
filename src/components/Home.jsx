@@ -150,7 +150,11 @@ export default function Home() {
           </div>
           <div className="about-card">
             <h3>Premium Products</h3>
-            <p>High-end cosmetics & techniques for lasting beauty...</p>
+            <p>
+              Exclusive use of high-end cosmetics and cutting-edge techniques.
+              We select products that complement Indian skin tones perfectly for
+              flawless, long-lasting results.
+            </p>
           </div>
         </div>
       </section>
@@ -480,14 +484,19 @@ export default function Home() {
             <h3>Makeup Services</h3>
             <p>
               Reserve your transformation for weddings, special events, or
-              photoshoots...
+              photoshoots. Special packages available for bridal parties and
+              corporate clients.
             </p>
-            <button className="btn-primary">View Services</button>
+            <button className="btn-primary">
+              <a href="#services">View Services</a>
+            </button>
           </div>
           <div className="card">
             <h3>Academy Enrollment</h3>
             <p>
-              Secure your place in our exclusive professional makeup courses...
+              Secure your place in our exclusive professional makeup courses.
+              Limited seats available to ensure personalized attention and
+              quality training.
             </p>
             <button className="btn-primary">Explore Courses</button>
           </div>
@@ -496,7 +505,15 @@ export default function Home() {
             <p>Luxury Studio Complex, 7/42 Patel Nagar, New Delhi, India</p>
             <p>+91 98765 43210</p>
             <p>info@charugumber.com</p>
-            <button className="btn-secondary">Get Directions</button>
+            <button className="btn-secondary">
+              <a
+                href="https://www.google.com/maps/place/Charu+Arora+Makeup+Artist/@29.9473492,77.542083,17z/data=!3m1!4b1!4m6!3m5!1s0x390eeb3e2525a253:0x8669d0ba92a85054!8m2!3d29.9473492!4d77.542083!16s%2Fg%2F11ks2n3gtb?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions
+              </a>
+            </button>
           </div>
         </div>
       </section>
@@ -597,7 +614,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Google 
+                  Google
                 </a>
               </button>
             </div>

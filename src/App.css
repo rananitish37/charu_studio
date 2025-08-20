@@ -1464,17 +1464,15 @@ h3 {
 }
 
 .card {
-  background: none; /* No background color */
-  border: none; /* No border */
-  box-shadow: none; /* No shadow */
-  padding: 1.5em 1.2em;
-  text-align: left; /* Left align content */
-  color: var(--text-light);
-  font-size: 1em;
-  border-radius: 0; /* No rounded corners */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Distribute space evenly */
+  height: 100%;                   /* Full height to align */
+  padding: 1.5em 1.2em;
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
 }
 
 .card h3 {
@@ -1488,7 +1486,10 @@ h3 {
   line-height: 1.45;
   color: var(--text-light);
 }
-
+.btn-secondary a{
+  color: var(--accent);
+  text-decoration: none;
+}
 /* Buttons in card styled similar to existing .btn classes */
 .card .btn-primary,
 .card .btn-secondary {
@@ -1506,6 +1507,10 @@ h3 {
   background-color: var(--accent);
   color: var(--bg-light);
 }
+.card .btn-primary a{
+  color: #111;
+  text-decoration: none;
+}
 
 .card .btn-primary:hover {
   background-color: #b99800;
@@ -1516,11 +1521,13 @@ h3 {
   border: 2px solid var(--accent);
   color: var(--accent);
 }
-
-.card .btn-secondary:hover {
+.card .btn-secondary:hover,
+.card .btn-secondary:hover a {
   background-color: var(--accent);
-  color: var(--bg-light);
+  color: #111;
 }
+
+
 
 /* Responsive Breakpoint for Mobile */
 @media (max-width: 900px) {
