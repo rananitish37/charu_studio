@@ -142,112 +142,166 @@ body {
   }
   .hero,
 .home > section:first-child {
+  width: 100%;
   margin-top: 0;
   padding-top: 0;
 }
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  margin-top: 0;
+  padding-top: 0;
+  overflow: hidden;
+}
 
-  
-   .hero-bg-container {
-    position: relative;
-    width: 100vw;      /* full viewport width */
-    height: 90vh;
-    overflow: hidden;
-    background: #000;
-    display: block;  
-  }
-  
-  .hero-bg {
-    position: absolute;
+.hero-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-bg {
+  position: absolute;
   top: 50%;
   left: 50%;
   width: 100vw;
   height: 100vh;
-  object-fit: cover; /* cover entire container, cropping if needed */
+  object-fit: cover;
   transform: translate(-50%, -50%);
   filter: brightness(0.92);
   opacity: 0.95;
   z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.63);
+  z-index: 1;
+}
+
+/* This block is the key fix for centering */
+.hero-content {
+  position: absolute;
+  left: 0; /* Align to the left edge */
+  right: 0; /* Align to the right edge */
+  margin: 0 auto; /* This centers the block horizontally */
+  bottom: 7%;
+  z-index: 2;
+  width: 90%; /* Use a percentage width to prevent overflow */
+  text-align: center;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-hero {
+  width: 100%; /* Ensures the text container takes full width of its parent */
+}
+
+.text-hero h1 {
+  font-size: 3.2em;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: var(--accent, #c2912e);
+  margin-bottom: 0.7em;
+  letter-spacing: 0.015em;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.text-hero p {
+  font-size: 1.6em;
+  color: var(--accent, #c2912e);
+  margin-bottom: 1.3em;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5em;
+  margin-top: 1em;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1em 2em;
+  border-radius: 28px;
+  border: none;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+    
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+
   .hero-content {
+    height: auto;
+    min-height: 100vh;
     position: absolute;
-    left: 50%;
-    bottom: 7%;         /* Try 7% or even 3%, adjust until desired position */
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2;
-    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* Aligns content to the left */
+    justify-content: flex-end;
+    padding-bottom: 7%;
+    text-align: left; /* Ensures text is left-aligned */
+    animation: none; /* No animation on mobile to improve performance */
+  }
+
+  .hero-text-box {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.9em;
     align-items: center;
-    text-align: center;
-    padding: 0 2em;
+    margin-top: 1.2em;
   }
-  
-  
-  
-  .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.63); /* or adjust for taste */
-    z-index: 1;
+
+  .hero-text-box h1 {
+    font-size: 1.6em;
   }
-  .text-hero h1 {
-    font-size: 3.2em;                  /* Larger for strong impact */
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--accent, #C2912E);     /* Same gold as logo */
-    margin-bottom: 0.7em;
-    letter-spacing: 0.012em;
+  .hero-text-box p {
+    font-size: 1em;
   }
-  
-  .text-hero p {
-    font-size: 1.5em;                   /* Make tagline bold and readable */
-    color: var(--accent, #C2912E);      /* Logo gold color */
-    margin-bottom: 1.3em;
-    font-weight: 500;
-  }
-    
-  
-  @media (max-width: 900px) {
-    .hero {
-      height: auto;
-      min-height: 420px;
-      padding-bottom: 2rem;
-    }
-    .hero-bg {
-      width: 100%;
-      height: auto;
-      min-width: unset;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .hero-content {
-      justify-content: flex-end;
-      padding: 0;
-      min-height: 420px;
-    }
-    .hero-text-box {
-      background: transparent;
-      padding: 0 1em;
-      width: 100%;
-      text-align: left;
-    }
-    .hero-buttons {
-      gap: 0.9em;
-      flex-direction: column;
-      margin-top: 1.2rem;
-      align-items: flex-start;
-    }
-    h1, p {
-      text-align: left;
-    }
-    h1 {
-      font-size: 1.6em;
-    }
-  }
+}
   
 
 .btn-primary,
@@ -1223,13 +1277,13 @@ h3 {
 /*offers*/
 .offers-slider-full {
   position: relative;
-  width: 100vw;             /* Full viewport width */
-  height: 90vh;             /* Match hero section height */
+  width: 100vw;
+  height: 90vh;
   overflow: hidden;
   background: var(--bg-light);
   color: var(--text-light);
-  display: block;           /* Align with hero section */
-  margin: 0;                /* Remove any default margins */
+  display: block;
+  margin-top: 5rem; /* Adds space above the section */
   padding: 0;
 }
 
@@ -1259,38 +1313,28 @@ h3 {
   overflow: hidden;
 }
 
-.offers-header-overlay {
-  position: absolute !important;
-  top: auto !important;
-  left: 50% !important;
-  transform: translateX(-90%) !important;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 !important;
-  margin: 0 !important;
-  text-align: center;
+.offer-text-box {
+  position: absolute;
+  bottom: 0%; /* Moves the box up from the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Horizontally centers the box */
   z-index: 10;
-  background: rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2em;
+  width: 100vw;
+  /* height: 90vh; */
+  padding: 2em;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.2); /* Makes text readable */
+
 }
 
-
-
-.offers-header-overlay h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 2.3em;
-  margin: 0;
-  color: var(--accent);
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+.offer-text-box h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.2em;
 }
 
-.offers-header-overlay p {
-  font-size: 1.18em;
-  margin: 0;
-  color: var(--text-light);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+.offer-text-box p {
+  font-size: 1.2em;
 }
 
 .offers-slider-content {
@@ -1309,13 +1353,12 @@ h3 {
 
 .offers-slider-controls {
   position: absolute;
-  top: 50%;
+  bottom: 30%; /* Positions the controls 15% from the bottom of the container */
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transform: translateY(-50%);
   z-index: 20;
   padding: 0 12px;
   pointer-events: auto;

@@ -36,6 +36,8 @@ export default function Home() {
   const offerSlides = [
     {
       image: require("../images/offer1.jpeg"),
+      title: "Luxury Makeover Package",
+      description: "Experience a full-service, personalized glam session at an exclusive introductory price.",
     },
     {
       image: require("../images/offer2.jpeg"), // Academy Early Bird
@@ -84,40 +86,30 @@ export default function Home() {
 
       {/* offers */}
       <section id="offers" className="offers-slider-full">
-        <div className="offers-bg-image-container">
-          <img
-            className="offers-bg-image"
-            src={offerSlides[current].image}
-            alt={offerSlides[current].title}
-          />
-          <div className="offers-bg-overlay"></div>
-          <div className="offers-header-overlay">
-            <h2>Exclusive Offers & Promotions</h2>
-            <p className="offers-desc">
-              Indulge in luxury beauty and elevate your skills with our special
-              limited-time offers.
-            </p>
-          </div>
-          <div className="offers-slider-content">
-            <div className="offers-slider-controls">
-              <button
-                className="offers-nav"
-                onClick={goToPrev}
-                aria-label="Previous Offer"
-              >
-                &#9664;
-              </button>
-              <button
-                className="offers-nav"
-                onClick={goToNext}
-                aria-label="Next Offer"
-              >
-                &#9654;
-              </button>
-            </div>
-          </div>
+      <div className="offers-bg-image-container">
+        <img
+          className="offers-bg-image"
+          src={offerSlides[current].image}
+          alt={offerSlides[current].title}
+        />
+        <div className="offers-bg-overlay"></div>
+
+        {/* This is the new, consolidated text box */}
+        <div className="offer-text-box">
+          <h2>{offerSlides[current].title}</h2>
+          <p>{offerSlides[current].description}</p>
         </div>
-      </section>
+
+        <div className="offers-slider-controls">
+          <button className="offers-nav" onClick={goToPrev} aria-label="Previous Offer">
+            ◀
+          </button>
+          <button className="offers-nav" onClick={goToNext} aria-label="Next Offer">
+            ▶
+          </button>
+        </div>
+      </div>
+    </section>
 
       {/* About */}
       <section id="about" className="about">
