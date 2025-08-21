@@ -499,7 +499,7 @@ export default function Home() {
             <p>info@charugumber.com</p>
             <button className="btn-secondary">
               <a
-                href="https://www.google.com/maps/place/Charu+Arora+Makeup+Artist/@29.9473492,77.542083,17z/data=!3m1!4b1!4m6!3m5!1s0x390eeb3e2525a253:0x8669d0ba92a85054!8m2!3d29.9473492!4d77.542083!16s%2Fg%2F11ks2n3gtb?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/Charu+Gumber+Makeup+Studio/@28.4889809,77.0814771,17z/data=!3m1!4b1!4m6!3m5!1s0x390d19304749f129:0xf75561a5ef5c95aa!8m2!3d28.4889809!4d77.084052!16s%2Fg%2F11wv7_spfm?entry=ttu&g_ep=EgoyMDI1MDgxOC4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
               >
