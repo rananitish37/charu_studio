@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 
 export default function Home() {
   const heroImages = [
-    require("../images/slider1.jpeg"),
-    require("../images/slider2.jpeg"),
-    require("../images/slider3.jpeg"),
+    require("../images/slider1.jpg"),
+    require("../images/slider2.jpg"),
+    require("../images/slider3.jpg"),
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,24 +35,25 @@ export default function Home() {
     setCurrent(current === offerSlides.length - 1 ? 0 : current + 1);
   const offerSlides = [
     {
-      image: require("../images/offer1.jpeg"),
+      image: require("../images/offer1.jpg"),
       title: "Luxury Makeover Package",
-      description: "Experience a full-service, personalized glam session at an exclusive introductory price.",
+      description:
+        "Experience a full-service, personalized glam session at an exclusive introductory price.",
     },
     {
-      image: require("../images/offer2.jpeg"), // Academy Early Bird
+      image: require("../images/offer2.jpg"), // Academy Early Bird
       title: "Academy Early Bird Special",
       description:
         "First 10 students get 15% off advanced courses. Transform your passion!",
     },
     {
-      image: require("../images/offer3.jpeg"), // First-Time Client
+      image: require("../images/offer3.jpg"), // First-Time Client
       title: "First-Time Client Welcome",
       description:
         "Enjoy 25% off your first makeup service. Discover unparalleled beauty.",
     },
     {
-      image: require("../images/offer4.jpeg"), // Group Glamour
+      image: require("../images/offer4.jpg"), // Group Glamour
       title: "Group Glamour Offer",
       description:
         "Book 3+ makeup appointments and each person gets 10% off. Ideal for events!",
@@ -86,30 +87,38 @@ export default function Home() {
 
       {/* offers */}
       <section id="offers" className="offers-slider-full">
-      <div className="offers-bg-image-container">
-        <img
-          className="offers-bg-image"
-          src={offerSlides[current].image}
-          alt={offerSlides[current].title}
-        />
-        <div className="offers-bg-overlay"></div>
+        <div className="offers-bg-image-container">
+          <img
+            className="offers-bg-image"
+            src={offerSlides[current].image}
+            alt={offerSlides[current].title}
+          />
+          <div className="offers-bg-overlay"></div>
 
-        {/* This is the new, consolidated text box */}
-        <div className="offer-text-box">
-          <h2>{offerSlides[current].title}</h2>
-          <p>{offerSlides[current].description}</p>
-        </div>
+          {/* This is the new, consolidated text box */}
+          <div className="offer-text-box">
+            <h2>{offerSlides[current].title}</h2>
+            <p>{offerSlides[current].description}</p>
+          </div>
 
-        <div className="offers-slider-controls">
-          <button className="offers-nav" onClick={goToPrev} aria-label="Previous Offer">
-            ◀
-          </button>
-          <button className="offers-nav" onClick={goToNext} aria-label="Next Offer">
-            ▶
-          </button>
+          <div className="offers-slider-controls">
+            <button
+              className="offers-nav"
+              onClick={goToPrev}
+              aria-label="Previous Offer"
+            >
+              ◀
+            </button>
+            <button
+              className="offers-nav"
+              onClick={goToNext}
+              aria-label="Next Offer"
+            >
+              ▶
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* About */}
       <section id="about" className="about">
@@ -157,7 +166,7 @@ export default function Home() {
           {/* Optionally add a full background image for the section */}
           <img
             className="services-bg"
-            src={require("../images/services-bg.jpeg")}
+            src={require("../images/services-bg.jpg")}
             alt="Studio ambiance"
           />
           <div className="services-overlay"></div>
@@ -168,7 +177,7 @@ export default function Home() {
           <div className="service-card">
             <img
               className="service-image"
-              src={require("../images/service-bride.jpeg")}
+              src={require("../images/service-bride.jpg")}
               alt="Bridal Couture Makeover"
             />
             <div className="service-content">
@@ -184,7 +193,7 @@ export default function Home() {
           <div className="service-card">
             <img
               className="service-image"
-              src={require("../images/service-party.jpeg")}
+              src={require("../images/service-party.jpg")}
               alt="Glamour & Party Styling"
             />
             <div className="service-content">
@@ -308,38 +317,42 @@ export default function Home() {
         </p>
         <div className="portfolio-grid">
           <div className="portfolio-card">
-            <img
-              src={require("../images/portfolio1.jpeg")}
+            <video
+              src={require("../videos/portfolio1.mp4")}
               alt="Portfolio Transformation 1"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
           </div>
           <div className="portfolio-card">
             <img
-              src={require("../images/portfolio2.jpeg")}
+              src={require("../images/portfolio2.jpg")}
               alt="Portfolio Transformation 2"
             />
           </div>
           <div className="portfolio-card">
             <img
-              src={require("../images/portfolio3.jpeg")}
+              src={require("../images/portfolio3.jpg")}
               alt="Portfolio Transformation 3"
             />
           </div>
           <div className="portfolio-card">
             <img
-              src={require("../images/portfolio4.jpeg")}
+              src={require("../images/portfolio4.jpg")}
               alt="Portfolio Transformation 4"
             />
           </div>
           <div className="portfolio-card">
             <img
-              src={require("../images/portfolio5.jpeg")}
+              src={require("../images/portfolio5.jpg")}
               alt="Portfolio Transformation 5"
             />
           </div>
           <div className="portfolio-card">
             <img
-              src={require("../images/portfolio6.jpeg")}
+              src={require("../images/portfolio6.jpg")}
               alt="Portfolio Transformation 6"
             />
           </div>
@@ -446,24 +459,24 @@ export default function Home() {
         </p>
         <div className="bts-grid">
           <img
-            src={require("../images/behind1.jpeg")}
+            src={require("../images/behind1.jpg")}
             alt="Makeup Artist at Work"
           />
-          <img src={require("../images/behind2.jpeg")} alt="Makeup Brushes" />
+          <img src={require("../images/behind2.jpg")} alt="Makeup Brushes" />
           <img
-            src={require("../images/behind3.jpeg")}
+            src={require("../images/behind3.jpg")}
             alt="Studio Preparation"
           />
           <img
-            src={require("../images/behind4.jpeg")}
+            src={require("../images/behind4.jpg")}
             alt="Transformation Unveiled"
           />
           <img
-            src={require("../images/behind5.jpeg")}
+            src={require("../images/behind5.jpg")}
             alt="Studio Preparation"
           />
           <img
-            src={require("../images/behind6.jpeg")}
+            src={require("../images/behind6.jpg")}
             alt="Transformation Unveiled"
           />
         </div>
@@ -513,7 +526,7 @@ export default function Home() {
         <div className="legacy-image-container">
           <img
             className="legacy-image"
-            src={require("../images/legecy-image.jpeg")}
+            src={require("../images/legecy-image.jpg")}
             alt="Legacy Image"
           />
           <div className="legacy-lowerhalf-overlay">
