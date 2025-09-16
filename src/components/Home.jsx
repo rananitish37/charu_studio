@@ -220,12 +220,11 @@ export default function Home() {
           </div>
           {/* Right: Text Card */}
           <div className="meet-charu-text">
-            <h2>Meet Charu Gumber: The Visionary Artist &amp; Mentor</h2>
-            <blockquote>
-              "Makeup is not about masking imperfections – it's about
-              celebrating uniqueness and bringing out the extraordinary in every
-              face."
-            </blockquote>
+          <div className="meet-charu-text-inner">
+          <h2>
+              Meet Charu Gumber: 
+              <span class="subheading">The Visionary Artist & Mentor</span>
+            </h2>
             <p>
               Renowned makeup artist with over a decade of experience in luxury
               weddings and high-fashion events across India. Charu's signature
@@ -237,6 +236,7 @@ export default function Home() {
               next generation of makeup professionals through her academy, where
               she shares exclusive techniques and industry insights.
             </p>
+            </div>
           </div>
         </div>
       </section>
@@ -311,7 +311,7 @@ export default function Home() {
         <p className="portfolio-desc">
           Explore a curated selection of our most exquisite makeup
           transformations. From breathtaking bridal artistry to striking
-          celebrity red carpet looks and avant-garde editorial concepts, our
+          celebrity red carpet looks and avant-garde editorial, our
           portfolio showcases the breadth and precision of Charu Gumber's
           artistry.
         </p>
@@ -397,13 +397,6 @@ export default function Home() {
           {/* Left: Text/Features Side */}
           <div className="studio-exp-content">
             <h2>Exclusive Studio Experience</h2>
-            <p className="studio-exp-desc">
-              Step into a sanctuary of beauty where every detail is designed for
-              your comfort and transformation.
-              <br />
-              Our studio offers a private, opulent environment where you can
-              relax and enjoy your metamorphosis.
-            </p>
             <div className="studio-exp-features">
               <div className="studio-exp-feature">
                 <div className="studio-exp-num">01</div>
@@ -459,24 +452,24 @@ export default function Home() {
         </p>
         <div className="bts-grid">
           <img
-            src={require("../images/behind1.jpg")}
+            src={require("../images/behind1.jpeg")}
             alt="Makeup Artist at Work"
           />
-          <img src={require("../images/behind2.jpg")} alt="Makeup Brushes" />
+          <img src={require("../images/behind2.jpeg")} alt="Makeup Brushes" />
           <img
-            src={require("../images/behind3.jpg")}
+            src={require("../images/behind3.jpeg")}
             alt="Studio Preparation"
           />
           <img
-            src={require("../images/behind4.jpg")}
+            src={require("../images/behind4.jpeg")}
             alt="Transformation Unveiled"
           />
           <img
-            src={require("../images/behind5.jpg")}
+            src={require("../images/behind5.jpeg")}
             alt="Studio Preparation"
           />
           <img
-            src={require("../images/behind6.jpg")}
+            src={require("../images/behind6.jpeg")}
             alt="Transformation Unveiled"
           />
         </div>
