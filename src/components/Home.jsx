@@ -500,7 +500,7 @@ export default function Home() {
           </div>
           <div className="card">
             <h3>Contact Us</h3>
-            <p>Luxury Studio Complex, 7/42 Patel Nagar, New Delhi, India</p>
+            <p>M- 4/32, Mushedpur, DLF Phase 2, Sector 25, Gurugram</p>
             <p>+91 98765 43210</p>
             <p>info@charugumber.com</p>
             <button className="btn-secondary">
@@ -538,7 +538,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section id="contact" className="contact-connect">
         <h2 className="contact-heading">
           Connect with Charu Gumber Make Up Studio
@@ -548,11 +547,11 @@ export default function Home() {
           <div className="contact-block">
             <h3>Reach Out</h3>
             <p>
-              Luxury Studio Complex,
+              M- 4/32, Mushedpur,
               <br />
-              7/42 Patel Nagar
+              DLF Phase 2
               <br />
-              New Delhi, India
+              Sector 25, Gurugram
             </p>
             <p>
               Phone: <span className="yellow">+91 98765 43210</span>
@@ -608,7 +607,7 @@ export default function Home() {
               </button>
               <button className="btn-instagram">
                 <a
-                  href="https://share.google/GD2g0ltYs1OBZ42Il"
+                  href="https://share.google/XR5nLQFWHQmqX3GdE"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
