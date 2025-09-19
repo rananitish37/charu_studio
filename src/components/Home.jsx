@@ -515,7 +515,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="legacy" className="legacy-section">
+      {/* <section id="legacy" className="legacy-section">
         <div className="legacy-image-container">
           <img
             className="legacy-image"
@@ -537,8 +537,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section id="contact" className="contact-connect">
+        <div className="contact-connect-width">
         <h2 className="contact-heading">
           Connect with Charu Gumber Make Up Studio
         </h2>
@@ -617,6 +618,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </div>
+        <div className="footer-divider"></div>
+          <footer className="footer-bar">
+            <p>&copy; 2025 Charu Gumber Studio &amp; Academy. All rights reserved.</p>
+          </footer>
       </section>
     </div>
   );
