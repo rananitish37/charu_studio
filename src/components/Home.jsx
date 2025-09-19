@@ -621,5 +621,3 @@ export default function Home() {
     </div>
   );
 }
-
-// https://share.google/YNqrTquglgpDYVnuE

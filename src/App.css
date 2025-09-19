@@ -2,14 +2,14 @@
    Global Variables
    ========================= */
 :root {
-  --primary: #333333;
+  --primary: #E5B299;
   --accent: #c2912e;
   --danger: #ff0000;
-  --bg-light: #000000;
-  --bg-cream: #1a1a1a;
-  --bg-pink: #dadada;
-  --text-light: #ffffff;
-  --text-dark: #333333;
+  --bg-light: #E5B299;
+  --bg-cream: #E5B299;
+  --bg-pink: #000000;
+  --text-light: #000000;
+  --text-dark: #E5B299;
 }
 
 /* =========================
@@ -1335,7 +1335,7 @@ h3 {
   background: var(--bg-light);
   color: var(--text-light);
   display: block;
-  margin-top: 5rem; /* Adds space above the section */
+  margin-top: 23px; /* Adds space above the section */
   padding: 0;
 }
 
