@@ -476,7 +476,7 @@ export default function Home() {
       </section>
 
       <section id="book" className="book-section">
-        <h2>Book Your Experience or Enroll Today</h2>
+        <h2 className="book-heading">Book Your Experience or Enroll Today</h2>
         <div className="book-card-row">
           <div className="card">
             <h3>Makeup Services</h3>
