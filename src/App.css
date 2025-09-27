@@ -711,6 +711,7 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.17);
+    box-sizing: border-box;
   
     max-width: 100%; /* or remove max-width if set */
     margin-left: 0;
@@ -760,6 +761,7 @@
     margin-bottom: 1em;
     max-width: 390px;
     width: 390px;
+    text-align-last: justify;
   }
   
   @media (max-width: 900px) {
@@ -776,7 +778,18 @@
     }
   
     .meet-charu-text {
-      padding: 2em 1em;
+      max-width: 100%;
+      box-sizing: border-box;
+      
+    }
+    .meet-charu-text-inner {
+      max-width: 100%;
+      /* text-align-last: justify; */
+    }
+    .meet-charu-text p {
+      width: 100% !important;
+      max-width: 100% !important;
+      text-align-last: justify;
     }
   }
   
