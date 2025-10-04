@@ -75,11 +75,11 @@ export default function Home() {
 
         <div className="hero-content">
           <div className="text-hero hero-text-box">
-            <h1>The Premier Luxury Makeup Studio &amp; Academy</h1>
+            <h1>The Premier Luxury<br /> Makeup Studio &amp; Academy</h1>
             <p>Experience the pinnacle of makeup excellence in India.</p>
             <div className="hero-buttons">
               <button className="btn-primary">Book an Appointment</button>
-              <button className="btn-secondary">Explore Academy</button>
+              {/* <button className="btn-secondary">Explore Academy</button> */}
             </div>
           </div>
         </div>
@@ -96,10 +96,15 @@ export default function Home() {
           <div className="offers-bg-overlay"></div>
 
           {/* This is the new, consolidated text box */}
-          <div className="offer-text-box">
-            <h2>{offerSlides[current].title}</h2>
-            <p>{offerSlides[current].description}</p>
-          </div>
+          
+            <div className="offer-text-box">
+              {/* <h2>{offerSlides[current].title}</h2>
+              <p>{offerSlides[current].description}</p> */}
+              <div className="offer-btn-container">
+                <button className="btn-book">Book now</button>
+              </div>
+            </div>
+         
 
           <div className="offers-slider-controls">
             <button
@@ -117,6 +122,7 @@ export default function Home() {
               ▶
             </button>
           </div>
+          
         </div>
       </section>
 
@@ -157,7 +163,9 @@ export default function Home() {
               flawless, long-lasting results.
             </p>
           </div>
+          
         </div>
+        
       </section>
 
       {/* Services */}
@@ -171,7 +179,7 @@ export default function Home() {
           />
           <div className="services-overlay"></div>
         </div>
-        <h2>Our Signature Services: Beyond Makeup, A Masterpiece</h2>
+        <h2>Our Signature Services</h2>
         <div className="services-grid">
           {/* Bridal Couture Makeovers Card */}
           <div className="service-card">
@@ -222,8 +230,8 @@ export default function Home() {
           <div className="meet-charu-text">
           <div className="meet-charu-text-inner">
           <h2>
-              Meet Charu Gumber: 
-              <span class="subheading">The Visionary Artist & Mentor</span>
+              Meet Charu: 
+              <span class="subheading">Makeup Artist & Mentor</span>
             </h2>
             <p>
               Renowned makeup artist with over a decade of experience in luxury
@@ -252,7 +260,7 @@ export default function Home() {
           />
           <div className="academy-overlay"></div>
         </div>
-        <h2>The Charu Gumber Academy: Elevate Your Craft</h2>
+        <h2>ACADEMY  <br />Elevate Your Craft</h2>
         <div className="academy-card-grid">
           {/* Card 1: Professional Courses */}
           <div className="academy-card">
@@ -307,10 +315,9 @@ export default function Home() {
 
       {/* Portfolio */}
       <section id="portfolio" className="portfolio-preview">
-        <h2>Our Work Portfolio: Artistry in Every Stroke</h2>
+        <h2>OUR PORTFOLIO <br/>Artistry in Every Stroke</h2>
         <p className="portfolio-desc">
-          Explore a curated selection of our most exquisite makeup
-          transformations. From breathtaking bridal artistry to striking
+          From breathtaking bridal artistry to striking
           celebrity red carpet looks and avant-garde editorial, our
           portfolio showcases the breadth and precision of Charu Gumber's
           artistry.
@@ -399,7 +406,6 @@ export default function Home() {
             <h2>Exclusive Studio Experience</h2>
             <div className="studio-exp-features">
               <div className="studio-exp-feature">
-                <div className="studio-exp-num">01</div>
                 <div>
                   <div className="studio-exp-title">Personal Consultation</div>
                   <div className="studio-exp-text">
@@ -409,7 +415,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="studio-exp-feature">
-                <div className="studio-exp-num">02</div>
+                
                 <div>
                   <div className="studio-exp-title">Bespoke Service</div>
                   <div className="studio-exp-text">
@@ -419,7 +425,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="studio-exp-feature">
-                <div className="studio-exp-num">03</div>
+                
                 <div>
                   <div className="studio-exp-title">Flexible Scheduling</div>
                   <div className="studio-exp-text">
@@ -444,11 +450,9 @@ export default function Home() {
       <section id="behind-scenes" className="behind-scenes">
         <h2>Behind the Scenes: The Artistry Unveiled</h2>
         <p className="behind-scenes-desc">
-          Witness the dedication and passion that goes into every
-          transformation. Our 'Behind the Scenes' glimpse reveals the meticulous
-          process, from initial consultation to the final radiant reveal.
-          Experience the precision, premium products, and luxurious atmosphere
-          that define the Charu Gumber experience.
+          From initial consultation to the final radiant reveal,
+          experience the precision, premium products, and luxurious atmosphere
+          that defines the Charu Gumber experience.
         </p>
         <div className="bts-grid">
           <img
@@ -475,7 +479,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="book" className="book-section">
+      {/* <section id="book" className="book-section">
         <h2 className="book-heading">Book Your Experience or Enroll Today</h2>
         <div className="book-card-row">
           <div className="card">
@@ -514,7 +518,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <section id="legacy" className="legacy-section">
         <div className="legacy-image-container">
           <img
@@ -541,7 +545,7 @@ export default function Home() {
       <section id="contact" className="contact-connect">
         <div className="contact-connect-width">
         <h2 className="contact-heading">
-          Connect with Charu Gumber Make Up Studio
+          Connect with us
         </h2>
         <div className="contact-grid">
           {/* Reach Out */}
@@ -594,7 +598,7 @@ export default function Home() {
             <h3>Follow Us</h3>
             <p>
               Stay updated with our latest looks, courses, and behind-the-scenes
-              content. Join our vibrant community!
+              content.
             </p>
             <div className="contact-btn">
               <button className="btn-instagram">
@@ -606,7 +610,7 @@ export default function Home() {
                   Instagram
                 </a>
               </button>
-              <button className="btn-instagram">
+              <button className="btn-google">
                 <a
                   href="https://share.google/XR5nLQFWHQmqX3GdE"
                   target="_blank"
@@ -621,7 +625,7 @@ export default function Home() {
         </div>
         <div className="footer-divider"></div>
           <footer className="footer-bar">
-            <p>&copy; 2025 Charu Gumber Studio &amp; Academy. All rights reserved.</p>
+            <p>&copy; 2025 Charu Gumber Studio &amp; Academy.<br /> <span>All rights reserved.</span></p>
           </footer>
       </section>
     </div>
