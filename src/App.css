@@ -1843,6 +1843,7 @@
       width: 87%;
       
       margin-bottom: 0.13em;
+      margin-top: 10px;
     }
     .footer-bar p{
       text-align: center;
@@ -1987,6 +1988,7 @@
           padding: 1em 0.8em;
           font-size: 0.95em;
           color: var(--bg-pink);
+          margin-bottom: 10px;
         }
       
         .contact-block h3 {
