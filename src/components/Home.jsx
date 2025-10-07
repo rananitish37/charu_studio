@@ -185,7 +185,7 @@ export default function Home() {
           <div className="service-card">
             <img
               className="service-image"
-              src={require("../images/service-bride.jpg")}
+              src={require("../images/service-bride.png")}
               alt="Bridal Couture Makeover"
             />
             <div className="service-content">
@@ -266,7 +266,7 @@ export default function Home() {
           <div className="academy-card">
             <img
               className="academy-card-image"
-              src={require("../images/course-card.jpeg")}
+              src={require("../images/course-card.jpg")}
               alt="Professional Courses"
             />
             <div className="academy-card-content">
@@ -282,7 +282,7 @@ export default function Home() {
           <div className="academy-card">
             <img
               className="academy-card-image"
-              src={require("../images/mentorship-card.jpeg")}
+              src={require("../images/mentorship-card.jpg")}
               alt="Personalized Mentorship"
             />
             <div className="academy-card-content">
@@ -298,7 +298,7 @@ export default function Home() {
           <div className="academy-card">
             <img
               className="academy-card-image"
-              src={require("../images/certification-card.jpeg")}
+              src={require("../images/certification-card.png")}
               alt="Elite Certification"
             />
             <div className="academy-card-content">
@@ -324,7 +324,13 @@ export default function Home() {
         </p>
         <div className="portfolio-grid">
           <div className="portfolio-card">
-            <video
+          <img
+              src={require("../images/portfolio1.jpg")}
+              alt="Portfolio Transformation 2"
+            />
+          </div>
+          <div className="portfolio-card">
+          <video
               src={require("../videos/portfolio1.mp4")}
               alt="Portfolio Transformation 1"
               autoPlay
@@ -332,12 +338,7 @@ export default function Home() {
               muted
               playsInline
             />
-          </div>
-          <div className="portfolio-card">
-            <img
-              src={require("../images/portfolio2.jpg")}
-              alt="Portfolio Transformation 2"
-            />
+            
           </div>
           <div className="portfolio-card">
             <img
@@ -385,7 +386,7 @@ export default function Home() {
               At Charu Gumber Studio, we believe your skin deserves nothing but
               the finest. Our curated collection features{" "}
               <span className="gold">
-                premium, cruelty-free, and skin-friendly products
+                premium and skin-friendly products
               </span>{" "}
               suited for Indian skin tones.
               <br />
@@ -552,17 +553,17 @@ export default function Home() {
           <div className="contact-block">
             <h3>Reach Out</h3>
             <p>
-              M- 4/32, Mushedpur,
+              M- 4/32,
               <br />
               DLF Phase 2
               <br />
               Sector 25, Gurugram
             </p>
             <p>
-              Phone: <span className="yellow">+91 98765 43210</span>
+              Phone: <span className="yellow">+91 92206 55547</span>
             </p>
             <p>
-              Email: <span className="yellow">info@charugumber.com</span>
+              Email: <span className="yellow">charugumbermua@gmail.com</span>
             </p>
           </div>
           {/* Business Hours */}
@@ -570,11 +571,11 @@ export default function Home() {
             <h3>Business Hours</h3>
             <ul>
               <li>
-                <span className="white-bold">Monday - Friday</span>: 10:00 AM –
-                7:00 PM
+                <span className="white-bold">Monday - Friday</span>: 11:00 AM –
+                8:00 PM
               </li>
               <li>
-                <span className="white-bold">Saturday</span>: 11:00 AM – 5:00 PM
+                <span className="white-bold">Saturday</span>: 11:00 AM – 8:00 PM
               </li>
               <li>
                 <span className="white-bold">Sunday</span>: By Appointment Only
@@ -586,11 +587,11 @@ export default function Home() {
           <div className="contact-block">
             <h3>Quick Links</h3>
             <ul>
-              <li className="yellow-link">Our Services</li>
-              <li className="yellow-link">The Academy</li>
-              <li className="yellow-link">Portfolio</li>
-              <li className="yellow-link">About Charu Gumber</li>
-              <li className="yellow-link">Contact Us</li>
+              <li className="yellow-link"><a href="#services">Our Services</a></li>
+              <li className="yellow-link"><a href="#academy">The Academy</a></li>
+              <li className="yellow-link"><a href="#portfolio">Portfolio</a></li>
+              <li className="yellow-link"><a href="#about">About Charu Gumber</a></li>
+              <li className="yellow-link"><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
           {/* Follow Us */}
