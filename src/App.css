@@ -190,7 +190,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 38vh;
+    height: 32vh;
 
     z-index: 1;
   }
@@ -198,7 +198,7 @@
   /* This block is the key fix for centering */
   .hero-content {
     position: absolute;
-    top: 50%; /* Moved up slightly to give room for the fade */
+    top: 55%; /* Moved up slightly to give room for the fade */
     left: 0;
     right: 0;
     bottom: 0;
@@ -226,7 +226,7 @@
   
     animation: fadeIn 2s forwards;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -241,24 +241,33 @@
   .text-hero {
     width: 100%; /* Ensures the text container takes full width of its parent */
     position: absolute;       /* covers the whole viewport */
-    top: 6%;
+    top: 24%;
   }
-  
-  .text-hero h1 {
-    font-size: 3.2em;
+  .text-hero h1{
+    line-height: 1.3;
+  }
+  .hero-text-main {
+    padding-bottom: -5px;
+    font-size: 1.2em;
     font-family: "Playfair Display", serif;
     font-weight: 700;
     color: var(--accent, #c2912e);
-    margin-bottom: 0.1em;
     letter-spacing: 0.015em;
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
   }
-  
+  .hero-text-sub{
+    font-size: 1.3em;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: var(--accent, #c2912e);
+    letter-spacing: 0.015em;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  }
   .text-hero p {
     font-size: 1em;
     color: var(--bg-pink, #fff);
     margin-bottom: 1.3em;
-    margin-top: -0.5em;   /* pulls it up a little */
+    margin-top: 0.5em;   /* pulls it up a little */
     font-weight: 500;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   }
@@ -289,7 +298,7 @@
   @media (max-width: 900px) {
     .hero {
       height: auto;
-      min-height: 100vh;
+      min-height: 90vh;
     }
   
     .hero-text-box {
@@ -304,8 +313,11 @@
       margin-top: 1.2em;
     }
   
-    .hero-text-box h1 {
-      font-size: 1.6em;
+    .hero-text-main {
+      font-size: 1em;
+    }
+    .hero-text-sub {
+      font-size: 1em;
     }
     .hero-text-box p {
       font-size: 1em;
@@ -326,7 +338,7 @@
   
   .btn-primary {
     background-color: var(--accent);
-    color: var(--bg-light);
+    color: var(--bg-pink);
   }
   
   .btn-primary:hover {
@@ -354,12 +366,12 @@
     .hero-content {
       justify-content: flex-end;
       padding: 0;
-      min-height: 420px;
-      top: 65%;
+      min-height: 200px;
+      top: 70%;
     }
   
     .hero-text-box {
-      top: 22%;
+      top: 18%;
       background: transparent;
       padding: 0 1em;
       width: 100%;
@@ -369,7 +381,7 @@
     .hero-buttons {
       gap: 0.9em;
       flex-direction: column;
-      margin-top: 1.8em;
+      margin-top: 1.5em;
       align-items: center;
     }
   
@@ -404,7 +416,7 @@
     .services-card p,
     .about-card p,
     .offers-slider-content p {
-      font-size: 1em;
+      font-size: 0.95em;
       line-height: 1.35;
       margin-bottom: 1em;
     }
@@ -455,6 +467,8 @@
   }
   
   .about-bg {
+    filter: blur(12px);
+    /* margin-top: -25px; */
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -571,7 +585,6 @@
   
   /* Services */
   .services {
-    margin-top: 23px;
     position: relative;
     overflow: hidden;
     padding: 2em 1.5em;
@@ -749,7 +762,7 @@
     margin-left: 0;              /* reset or zero */
     position: relative;
     left: 0;   
-    
+    padding-left: 1.3em;
   
   }
   .subheading {
@@ -820,6 +833,7 @@
   }
   
   .academy-bg {
+    filter: blur(12px);
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -971,8 +985,11 @@
     width: 90%; 
     margin-bottom:10px;                       /* Responsive: max out at container */
   }
-  .portfolio-preview h2{
-    font-size: 2.3em;
+  .portfolio-text-main{
+    font-size: 1.7em;
+  }
+  .portfolio-text-sub{
+    font-size: 1em;
   }
   
   .portfolio-card img:hover,
@@ -991,9 +1008,11 @@
     .portfolio-card video {
       height: 140px;
     }
-    .portfolio-preview h2
-    {
-      font-size: 2.3em;
+    .portfolio-text-main{
+      font-size: 1.2em;
+    }
+    .portfolio-text-sub{
+      font-size: 1em;
     }
     .portfolio-desc {
       width: 90%;
@@ -1045,6 +1064,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: justify;
   }
   
   /* Card Base */
@@ -1097,7 +1117,7 @@
   .products-text-card {
     padding: 3em 2em;
     min-height: 410px;
-    text-align: left;
+    text-align: justify;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1243,8 +1263,9 @@
   
   .studio-exp-image img {
     width: 100%;
-    height: 440px;
+    height: 560px;
     object-fit: cover;
+    object-position: top center;
     border-radius: 30px;
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
     border: 2px solid var(--accent);
@@ -1290,9 +1311,21 @@
     box-sizing: border-box;
   }
   
-  .behind-scenes h2 {
+  .behind-text-main {
     color: var(--accent);
-    font-size: 2.3em;
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    left: 0;
+    transform: none;
+    box-sizing: border-box;
+  }
+  .behind-text-sub {
+    color: var(--accent);
+    font-size: 1em;
     margin-bottom: 0.7em;
     font-family: "Playfair Display", serif;
     text-align: center;
@@ -1309,7 +1342,7 @@
     margin-bottom: 2.5em;
     line-height: 1.5;
     text-align: justify;
-    width: 100%;
+    width: 80%;
     position: relative;
     left: 0;
     transform: none;
@@ -1354,7 +1387,7 @@
     }
     .behind-scenes-desc {
      
-      width: 100%;
+      width: 90%;
       left: 0;
       transform: none;
       text-align: center;
@@ -1370,7 +1403,6 @@
     background: var(--bg-light);
     color: var(--text-dark);
     display: block;
-    margin-top: 23px; /* Adds space above the section */
     padding: 0;
   }
   
@@ -1513,7 +1545,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
-  
+  .btn-book a{
+    text-decoration: none;
+    color: var(--bg-pink);
+  }
   @media (min-width: 701px) {
     .offers-header-overlay,
     .offers-slider-content,
@@ -1535,7 +1570,7 @@
     }
   
     .offers-bg-image-container {
-      height: 90vh;            /* Consistent with full section */
+      height: 85vh;            /* Consistent with full section */
       position: relative;
     }
   
@@ -1549,6 +1584,11 @@
   
     .offers-slider-controls {
       padding: 0 12px;
+    }
+
+    .offers-slider-full{
+      margin-top: -23px;
+      margin-bottom: -23px;
     }
   }
   
@@ -1665,7 +1705,7 @@
   
   .card .btn-primary {
     background-color: var(--accent);
-    color: var(--bg-light);
+    color: var(--bg-pink);
   }
   .card .btn-primary a{
     color: #111;

@@ -75,10 +75,10 @@ export default function Home() {
 
         <div className="hero-content">
           <div className="text-hero hero-text-box">
-            <h1>The Premier Luxury<br /> Makeup Studio &amp; Academy</h1>
+            <h1><span className="hero-text-main">The Premier Luxury <br/></span> <span className="hero-text-sub">Makeup Studio &amp; Academy</span></h1>
             <p>Experience the pinnacle of makeup excellence in India.</p>
             <div className="hero-buttons">
-              <button className="btn-primary">Book an Appointment</button>
+              <button className="btn-primary">Book Appointment</button>
               {/* <button className="btn-secondary">Explore Academy</button> */}
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
               {/* <h2>{offerSlides[current].title}</h2>
               <p>{offerSlides[current].description}</p> */}
               <div className="offer-btn-container">
-                <button className="btn-book">Book now</button>
+                <button className="btn-book"><a href="#contact">Book Now</a></button>
               </div>
             </div>
          
@@ -315,7 +315,7 @@ export default function Home() {
 
       {/* Portfolio */}
       <section id="portfolio" className="portfolio-preview">
-        <h2>OUR PORTFOLIO <br/>Artistry in Every Stroke</h2>
+        <h2><span className="portfolio-text-main">OUR PORTFOLIO <br/></span><span className="portfolio-text-sub">Artistry in Every Stroke</span></h2>
         <p className="portfolio-desc">
           From breathtaking bridal artistry to striking
           celebrity red carpet looks and avant-garde editorial, our
@@ -441,7 +441,7 @@ export default function Home() {
           {/* Right: Studio Image */}
           <div className="studio-exp-image">
             <img
-              src={require("../images/studio-interior.jpeg")}
+              src={require("../images/studio-interior.jpg")}
               alt="Luxury Makeup Studio"
             />
           </div>
@@ -449,7 +449,7 @@ export default function Home() {
       </section>
 
       <section id="behind-scenes" className="behind-scenes">
-        <h2>Behind the Scenes: The Artistry Unveiled</h2>
+        <h2><span className="behind-text-main">Behind the Scenes<br/></span><span className="behind-text-sub"> The Artistry Unveiled</span></h2>
         <p className="behind-scenes-desc">
           From initial consultation to the final radiant reveal,
           experience the precision, premium products, and luxurious atmosphere
