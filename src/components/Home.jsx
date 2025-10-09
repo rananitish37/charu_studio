@@ -469,14 +469,14 @@ export default function Home() {
             src={require("../images/behind4.jpeg")}
             alt="Transformation Unveiled"
           />
-          <img
+          {/* <img
             src={require("../images/behind5.jpeg")}
             alt="Studio Preparation"
           />
           <img
             src={require("../images/behind6.jpeg")}
             alt="Transformation Unveiled"
-          />
+          /> */}
         </div>
       </section>
 
@@ -571,12 +571,10 @@ export default function Home() {
             <h3>Business Hours</h3>
             <ul>
               <li>
-                <span className="white-bold">Monday - Friday</span>: 11:00 AM –
+                <span className="white-bold">Mon - Sat</span>: 11:00 AM –
                 8:00 PM
               </li>
-              <li>
-                <span className="white-bold">Saturday</span>: 11:00 AM – 8:00 PM
-              </li>
+              
               <li>
                 <span className="white-bold">Sunday</span>: By Appointment Only
               </li>
