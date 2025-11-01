@@ -35,31 +35,25 @@ export default function Home() {
     setCurrent(current === offerSlides.length - 1 ? 0 : current + 1);
   const offerSlides = [
     {
-      image: require("../images/offer1.jpg"),
+      desktopImage: require("../images/offer1-desktop.png"),
+      mobileImage: require("../images/offer1-mobile.png"),
       title: "Luxury Makeover Package",
-      description:
-        "Experience a full-service, personalized glam session at an exclusive introductory price.",
+      description: "Experience a full-service, personalized glam session at an exclusive introductory price."
     },
     {
-      image: require("../images/offer2.jpg"), // Academy Early Bird
+      desktopImage: require("../images/offer2-desktop.png"),
+      mobileImage: require("../images/offer2-mobile.png"),
       title: "Academy Early Bird Special",
-      description:
-        "First 10 students get 15% off advanced courses. Transform your passion!",
+      description: "First 10 students get 15% off advanced courses. Transform your passion!"
     },
     {
-      image: require("../images/offer3.jpg"), // First-Time Client
+      desktopImage: require("../images/offer3-desktop.png"),
+      mobileImage: require("../images/offer3-mobile.png"),
       title: "First-Time Client Welcome",
-      description:
-        "Enjoy 25% off your first makeup service. Discover unparalleled beauty.",
-    },
-    {
-      image: require("../images/offer4.jpg"), // Group Glamour
-      title: "Group Glamour Offer",
-      description:
-        "Book 3+ makeup appointments and each person gets 10% off. Ideal for events!",
-    },
+      description: "Enjoy 25% off your first makeup service. Discover unparalleled beauty."
+    }
   ];
-
+  
   return (
     <div className="home">
       {/* Hero */}
@@ -78,7 +72,7 @@ export default function Home() {
             <h1><span className="hero-text-main">The Premier Luxury <br/></span> <span className="hero-text-sub">Makeup Studio &amp; Academy</span></h1>
             <p>Experience the pinnacle of makeup excellence in India.</p>
             <div className="hero-buttons">
-              <button className="btn-primary">Book Appointment</button>
+              <button className="btn-primary"><a href="#contact">Book Appointment</a></button>
               {/* <button className="btn-secondary">Explore Academy</button> */}
             </div>
           </div>
@@ -87,44 +81,30 @@ export default function Home() {
 
       {/* offers */}
       <section id="offers" className="offers-slider-full">
-        <div className="offers-bg-image-container">
-          <img
-            className="offers-bg-image"
-            src={offerSlides[current].image}
-            alt={offerSlides[current].title}
-          />
-          <div className="offers-bg-overlay"></div>
+  <div className="offers-bg-image-container">
+    <picture>
+      <source srcSet={offerSlides[current].desktopImage} media="(min-width:1024px)" />
+      <img
+        className="offers-bg-image"
+        src={offerSlides[current].mobileImage}
+        alt={offerSlides[current].title}
+      />
+    </picture>
+    <div className="offers-bg-overlay"></div>
+    <div className="offer-text-box">
+      <div className="offer-btn-container">
+        <button className="btn-book">
+          <a href="#contact">Book Now</a>
+        </button>
+      </div>
+    </div>
+    <div className="offers-slider-controls">
+      <button className="offers-nav" onClick={goToPrev} aria-label="Previous Offer">◀</button>
+      <button className="offers-nav" onClick={goToNext} aria-label="Next Offer">▶</button>
+    </div>
+  </div>
+</section>
 
-          {/* This is the new, consolidated text box */}
-          
-            <div className="offer-text-box">
-              {/* <h2>{offerSlides[current].title}</h2>
-              <p>{offerSlides[current].description}</p> */}
-              <div className="offer-btn-container">
-                <button className="btn-book"><a href="#contact">Book Now</a></button>
-              </div>
-            </div>
-         
-
-          <div className="offers-slider-controls">
-            <button
-              className="offers-nav"
-              onClick={goToPrev}
-              aria-label="Previous Offer"
-            >
-              ◀
-            </button>
-            <button
-              className="offers-nav"
-              onClick={goToNext}
-              aria-label="Next Offer"
-            >
-              ▶
-            </button>
-          </div>
-          
-        </div>
-      </section>
 
       {/* About */}
       <section id="about" className="about">

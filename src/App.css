@@ -289,7 +289,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
   }
-  
+  .btn-primary a{
+    text-decoration: none;
+    color: var(--bg-pink);
+  }
   .btn-primary:hover,
   .btn-secondary:hover {
     transform: translateY(-2px);
@@ -517,6 +520,7 @@
   .about-card h3 {
     color: var(--accent);
     margin-bottom: 0.9em;
+    text-align:  center;
   }
   
   .about-card p {
