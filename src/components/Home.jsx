@@ -164,7 +164,7 @@ export default function Home() {
           {/* Bridal Couture Makeovers Card */}
           <div className="service-card">
             <img
-              className="service-image"
+              className="service-image1"
               src={require("../images/service-bride.png")}
               alt="Bridal Couture Makeover"
             />
@@ -180,7 +180,7 @@ export default function Home() {
           {/* Glamour & Party Styling Card */}
           <div className="service-card">
             <img
-              className="service-image"
+              className="service-image2"
               src={require("../images/service-party.jpg")}
               alt="Glamour & Party Styling"
             />
